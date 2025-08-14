@@ -59,6 +59,10 @@ export default {
 					green: 'hsl(var(--neon-green))',
 					blue: 'hsl(var(--neon-blue))',
 					pink: 'hsl(var(--neon-pink))'
+				},
+				terminal: {
+					bg: 'hsl(var(--terminal-bg))',
+					text: 'hsl(var(--terminal-text))'
 				}
 			},
 			borderRadius: {
