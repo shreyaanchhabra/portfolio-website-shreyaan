@@ -41,7 +41,7 @@ const HeroSection = () => {
         <div className="text-center max-w-4xl mx-auto">
           {/* Profile Avatar */}
           <motion.div
-            className="flex justify-center mb-8"
+            className="flex justify-center mb-6"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
@@ -92,7 +92,7 @@ const HeroSection = () => {
 
           {/* Main Heading */}
           <motion.h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -106,7 +106,7 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <motion.p
-            className="text-xl sm:text-2xl md:text-3xl text-muted-foreground mb-8 font-light"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 font-light"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -121,7 +121,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -171,7 +171,7 @@ const HeroSection = () => {
 
           {/* Terminal Hint */}
           <motion.div
-            className="mb-8"
+            className="mb-12"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -194,7 +194,7 @@ const HeroSection = () => {
 
           {/* Scroll Indicator */}
           <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
