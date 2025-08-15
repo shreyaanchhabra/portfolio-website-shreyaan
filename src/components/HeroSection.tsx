@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Terminal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import profileAvatar from '@/assets/profile-avatar.jpg';
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -37,6 +39,57 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
+          {/* Profile Avatar */}
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
+          >
+            <motion.div
+              className="relative group cursor-pointer"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent opacity-75 blur-md"
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
+              <Avatar className="w-32 h-32 relative z-10 ring-4 ring-primary/50 ring-offset-4 ring-offset-background">
+                <AvatarImage 
+                  src={profileAvatar} 
+                  alt="Profile" 
+                  className="object-cover hover:brightness-110 transition-all duration-300"
+                />
+                <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-primary-foreground text-2xl font-bold">
+                  CD
+                </AvatarFallback>
+              </Avatar>
+              <motion.div
+                className="absolute -bottom-2 -right-2 bg-gradient-to-r from-primary to-secondary p-2 rounded-full"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <Terminal className="h-4 w-4 text-primary-foreground" />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
           {/* Main Heading */}
           <motion.h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
@@ -114,6 +167,29 @@ const HeroSection = () => {
                 </a>
               </Button>
             </div>
+          </motion.div>
+
+          {/* Terminal Hint */}
+          <motion.div
+            className="mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <motion.p
+              className="text-sm text-muted-foreground bg-muted/20 rounded-full px-4 py-2 inline-flex items-center gap-2 border border-primary/20"
+              animate={{
+                boxShadow: [
+                  "0 0 0 0 hsl(var(--primary) / 0.3)",
+                  "0 0 0 4px hsl(var(--primary) / 0.1)",
+                  "0 0 0 0 hsl(var(--primary) / 0.3)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <Terminal className="h-3 w-3 text-primary" />
+              Press <kbd className="px-2 py-1 text-xs bg-muted rounded border border-border text-primary font-mono">/</kbd> to open terminal
+            </motion.p>
           </motion.div>
 
           {/* Scroll Indicator */}

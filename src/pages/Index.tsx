@@ -5,12 +5,12 @@ import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import TechStackSection from '@/components/TechStackSection';
 import ContactSection from '@/components/ContactSection';
-import SpotifyWidget from '@/components/SpotifyWidget';
+import RadioWidget from '@/components/RadioWidget';
 import Terminal from '@/components/Terminal';
 
 const Index = () => {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
-  const [showSpotify, setShowSpotify] = useState(true);
+  const [showRadio, setShowRadio] = useState(true);
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -27,8 +27,8 @@ const Index = () => {
     return () => document.removeEventListener('keydown', handleKeyPress);
   }, [isTerminalOpen]);
 
-  const toggleSpotify = () => {
-    setShowSpotify(!showSpotify);
+  const toggleRadio = () => {
+    setShowRadio(!showRadio);
   };
 
   return (
@@ -40,12 +40,12 @@ const Index = () => {
       <TechStackSection />
       <ContactSection />
       
-      {showSpotify && <SpotifyWidget />}
+      {showRadio && <RadioWidget />}
       
       <Terminal 
         isOpen={isTerminalOpen} 
         onClose={() => setIsTerminalOpen(false)}
-        onToggleSpotify={toggleSpotify}
+        onToggleSpotify={toggleRadio}
       />
     </div>
   );

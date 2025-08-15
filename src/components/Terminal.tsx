@@ -22,7 +22,7 @@ const Terminal = ({ isOpen, onClose, onToggleSpotify }: TerminalProps) => {
 • projects  - Lists your projects with clickable links
 • contact   - Displays your email, LinkedIn, and GitHub
 • skills    - Shows your tech stack with emojis/icons
-• play music - Opens or toggles the Spotify Now Playing widget
+• play music - Opens or toggles the Radio Player widget
 • clear     - Clears the terminal screen
 • exit      - Exit out of terminal
 • secret    - Shows an Easter egg message or ASCII art`,
@@ -76,7 +76,7 @@ Tools & Others:
 
     'play music': () => {
       onToggleSpotify();
-      return 'Toggled Spotify Now Playing widget!';
+      return 'Toggled Radio Player widget!';
     },
 
     clear: () => {
